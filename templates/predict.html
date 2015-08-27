@@ -1,0 +1,20 @@
+{% extends "layout.html" %}
+
+{% block content %}
+
+   <div class="jumbotron jumbo2" align="center">
+      <div class="row">
+            <p> The R^2 value is {{r2}} </p>
+            <br><br>
+            <p> <b>The Coeficients on the Features Are:</b></p>
+            {% for feature,coef in coefs.iteritems() %}
+            <p> {{feature}}: {{coef}}</p>
+            {% endfor %}
+      </div>
+    </div>
+
+ 
+{%endblock%}
+
+</body>
+</html>

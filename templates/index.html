@@ -1,0 +1,48 @@
+{% extends "layout.html" %}
+
+{% block content %}
+  <div class="jumbotron jumbo2" align="center">
+
+    <form action="predict" class="form" method="POST" enctype="multipart/form-data">
+          <div style="display: none">
+          <input id="csrf_token" name="csrf_token" type="hidden" value="1383635238.9##d8f7f433e854cc682ade261cd9bb7113a147ee29" />
+          </div>
+          <div class="heading">
+          {% block header %}
+          <h4 class="form-heading"></h4>
+          {%endblock%}
+          </div>
+           
+        <div class="form-group">
+          <p class="help-block">Choose a csv file from file with all numeric data.</p>
+          <input type="file" name ="file" accept=".csv">
+        </div>
+
+        <div class="form-group">
+          <p class="help-block">What is the name of the independent variable?</p>
+          <input type="text" class="form-control" name="output">
+        </div>
+
+        <div class="form-group">
+          <p class="help-block">Do you want to normalize the variables?</p>
+          <label class="radio-inline"><input type="radio" checked="checked" name="norm">Yes</label>
+          <label class="radio-inline"><input type="radio" name="norm">No</label>
+        </div>
+
+        <div class="form-group">
+          <p class="help-block">Do you want to fit an intercept?</p>
+          <label class="radio-inline"><input type="radio" checked="checked" name="inter">Yes</label>
+          <label class="radio-inline"><input type="radio" name="inter">No</label>
+        </div>
+
+          <button class="btn btn-success btn-lg" type="submit">Fit Model</button>
+  </form>  
+
+</div>
+
+<script type='text/javascript' src="static/js/jquery.min.js"></script>
+
+{% endblock %}
+
+</body>
+</html>
